@@ -1,11 +1,12 @@
 import { useGetUsers } from "./hooks/useGetUsers";
 import UserCard from "../Atoms/UserCard";
+import './index.css'
 
 const Users = () => {
     const {users, loading, errors} = useGetUsers();
     console.log({users});
     return(
-        <div>
+        <div className="users"> 
             {loading && <h2>loading users...</h2>}
             {errors.length>0 && <h2>{errors}</h2>}
             {users.length > 0 
